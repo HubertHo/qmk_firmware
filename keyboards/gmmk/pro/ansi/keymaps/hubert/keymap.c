@@ -70,6 +70,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 static void set_rgb_caps_leds(void);
 
 void rgb_matrix_indicators_user() {
+    // The only LEDs that I want to see are the panel LEDs
+    rgb_matrix_set_color_all(0x00, 0x00, 0x00);
     if (host_keyboard_led_state().caps_lock) {
         set_rgb_caps_leds();
     }
