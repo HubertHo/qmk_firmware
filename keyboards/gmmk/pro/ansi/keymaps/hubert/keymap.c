@@ -64,3 +64,34 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 #endif
+
+#ifdef RGB_MATRIX_ENABLE
+
+static void set_rgb_caps_leds(void);
+
+void rgb_matrix_indicators_user() {
+    if (host_keyboard_led_state().caps_lock) {
+        set_rgb_caps_leds();
+    }
+}
+
+static void set_rgb_caps_leds() {
+    rgb_matrix_set_color(67, 0xE4, 0xA9, 0x15); // Left side LED 1
+    rgb_matrix_set_color(68, 0xE4, 0xA9, 0x15); // Right side LED 1
+    rgb_matrix_set_color(70, 0xE4, 0xA9, 0x15); // Left side LED 2
+    rgb_matrix_set_color(71, 0xE4, 0xA9, 0x15); // Right side LED 2
+    rgb_matrix_set_color(73, 0xE4, 0xA9, 0x15); // Left side LED 3
+    rgb_matrix_set_color(74, 0xE4, 0xA9, 0x15); // Right side LED 3
+    rgb_matrix_set_color(76, 0xE4, 0xA9, 0x15); // Left side LED 4
+    rgb_matrix_set_color(77, 0xE4, 0xA9, 0x15); // Right side LED 4
+    rgb_matrix_set_color(80, 0xE4, 0xA9, 0x15); // Left side LED 5
+    rgb_matrix_set_color(81, 0xE4, 0xA9, 0x15); // Right side LED 5
+    rgb_matrix_set_color(83, 0xE4, 0xA9, 0x15); // Left side LED 6
+    rgb_matrix_set_color(84, 0xE4, 0xA9, 0x15); // Right side LED 6
+    rgb_matrix_set_color(87, 0xE4, 0xA9, 0x15); // Left side LED 7
+    rgb_matrix_set_color(88, 0xE4, 0xA9, 0x15); // Right side LED 7
+    rgb_matrix_set_color(91, 0xE4, 0xA9, 0x15); // Left side LED 8
+    rgb_matrix_set_color(92, 0xE4, 0xA9, 0x15); // Right side LED 8
+    rgb_matrix_set_color(3, 0xE4, 0xA9, 0x15); // CAPS LED
+}
+#endif
