@@ -5,4 +5,4 @@
 #endif
 
 #undef DEBOUNCE
-#define DEBOUNCE 8
+#define DEBOUNCE 12
